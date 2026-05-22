@@ -25,12 +25,15 @@ daftar = [
     Buku(112, "Sang Pemimpi", "Andrea Hirata", "Fiksi Remaja", stok=9, dipinjam=6)
 ]
 
+#------------------Fungsi Line----------------------
 def line(c, n):
     print(c * n)
 
+#-----------------Fungsi bersihkan------------------
 def bersihkan():
     print("\033[2J\033[1;1H", end="")  
 
+#-----------------Fungsi tambah---------------------
 def tambah():
     bersihkan()
 
@@ -60,6 +63,7 @@ def tambah():
 
     print("\nBuku berhasil ditambahkan.")
 
+#--------------------------------------------Fungsi tampilsemua--------------------------------------------------
 def tampilSemua():
     bersihkan()
 
@@ -79,12 +83,14 @@ def tampilSemua():
 
     line("=", 120)
 
+#------------------------Fungsi cari(kode)----------------------------
 def cari(kode):
     for i in range(len(daftar)):
         if daftar[i].code == kode:
             return i
     return -1
 
+#-----------------------------Fungsi pinjam---------------------------
 def pinjam():
     bersihkan()
 
@@ -107,6 +113,7 @@ def pinjam():
             buku.dipinjam += 1
             print("Buku berhasil dipinjam.")
 
+#------------------------------Fungsi kembali---------------------------
 def kembali():
     bersihkan()
 
@@ -129,9 +136,10 @@ def kembali():
             buku.stok += 1
             print("Buku berhasil dikembalikan.")
 
+#--------------------------------------Fungsi update--------------------------------------
 def update():
     bersihkan()
-    
+
     try:
         kode = int(input("Masukkan kode buku yang ingin diupdate: "))
     except ValueError:
@@ -183,6 +191,7 @@ def update():
 
     print("\nData buku diperbarui.")
 
+#--------------------------------------Fungsi hapus--------------------------------------
 def hapus():
     bersihkan()
 
@@ -202,6 +211,7 @@ def hapus():
 
     print("Buku berhasil dihapus.")
 
+#--------------------------------------Fungsi main--------------------------------------
 def main():
 
     while True:
@@ -214,7 +224,7 @@ def main():
         print("3. Pinjam Buku")
         print("4. Kembalikan Buku")
         print("5. Update Buku")
-        print("6. Hapus Buku")
+        print("6. Hapus Buku") 
         print("0. Keluar")
 
         pilih = input("Pilih menu: ")

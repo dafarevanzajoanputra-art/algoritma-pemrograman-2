@@ -1,3 +1,4 @@
+#program manajemen perpustakaan sederhana
 class Buku:
     def __init__(self, code, judul, pengarang, genre, stok=1, dipinjam=0):
         self.code = code
